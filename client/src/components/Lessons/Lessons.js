@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+import { NavLink } from 'react-router-dom';
+import './Lessons.css'
 
 class Lessons extends Component {
   constructor(props) {
@@ -21,14 +23,14 @@ class Lessons extends Component {
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
         <DropdownToggle caret>
-          Lessons Dropdown
+          Lessons
         </DropdownToggle>
         <DropdownMenu>
-          
-          <DropdownItem>HTML</DropdownItem>
-          <DropdownItem>CSS</DropdownItem>
-          <DropdownItem>JavaScript</DropdownItem>
-          
+          <div class="dropdown">
+          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/variables">Variables</NavLink></DropdownItem>
+          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/arrays">Arrays</NavLink></DropdownItem>
+          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/loops">Loops</NavLink></DropdownItem>
+          </div>
         </DropdownMenu>
       </ButtonDropdown>
     );
