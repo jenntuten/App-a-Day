@@ -123,7 +123,7 @@ class Resources extends Component {
                           {comment.synopsis}
 
                         </div>
-                        <DeleteBtn onClick={() => this.deleteComment(comment._id)} />
+                        
                       </div>
                     </div>
                   </div>
