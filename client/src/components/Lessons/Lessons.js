@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import './Lessons.css'
-
 class Lessons extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +17,10 @@ class Lessons extends Component {
       dropdownOpen: !this.state.dropdownOpen
     });
   }
-
+  getLesson = () => {
+    // We always use the setState method to update a component's state
+    this.setState({ count: this.state.count + 1 });
+  };
   render() {
     return (
       <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
@@ -26,11 +28,11 @@ class Lessons extends Component {
           Lessons
         </DropdownToggle>
         <DropdownMenu>
-          <div class="dropdown">
-          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/variables">Variables</NavLink></DropdownItem>
-          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/arrays">Arrays</NavLink></DropdownItem>
-          <DropdownItem><NavLink className="navItem" id="dropdown-item" to="/loops">Loops</NavLink></DropdownItem>
-          </div>
+          
+          <DropdownItem><NavLink className="lessonDropdown" to="/lesson1">Lesson 1: Arrays</NavLink></DropdownItem>
+          <DropdownItem><NavLink className="lessonDropdown" to="/lesson2">Lesson 2: Loops</NavLink></DropdownItem>
+          <DropdownItem><NavLink className="lessonDropdown" to="/lesson3">Lesson 3: Functions</NavLink></DropdownItem>
+          
         </DropdownMenu>
       </ButtonDropdown>
     );

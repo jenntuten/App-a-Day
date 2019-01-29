@@ -1,9 +1,7 @@
 import React from "react";
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../authentication/actions';
-import Lessons from '../components/Lessons/Lessons'
-//change to 186667235953-j2fte15v0l536qg9f09iqsuaiearrt4o.apps.googleusercontent.com for local testing
-//547329662491-37fduo5asu0a1q2iovmuc582aum8mr0a.apps.googleusercontent.com for deployment
+
 class GoogleAuth extends React.Component {
     componentDidMount(){
         window.gapi.load('client:auth2', () => {
@@ -61,23 +59,25 @@ viewLogin = () => {
         }
     }
 
-    /*renderTutorials() {
+    renderTutorials() {
         if(this.props.isSignedIn === null) {
             return null;
         } else if (this.props.isSignedIn) {
             return (
-
+                <button onClick={this.viewLessons} className="ui green google button">
+                Tutorials
+                </button>
             );
         } else {
             return null
         }
-    }*/
+    }
     render() {
         console.log('This is our state: ', this.state)
         console.log('This is our props: ', this.props)
         return (
             <div>{this.renderAuthButton()}
-            
+
             </div>
         );
     }
@@ -90,5 +90,3 @@ const mapStateToProps = (state) => {
 export default connect(
     mapStateToProps,
      { signIn, signOut }) (GoogleAuth);
-
-     //{this.renderTutorials()}
