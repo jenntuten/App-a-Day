@@ -14,8 +14,6 @@
   padding-bottom: 1rem;
 }
 .lesson-header {
-  background-color: white;
-  padding-top: 5rem;
-  width: 95%;
+  background-color: rgb(232, 230, 230);
   margin: 0 auto;
 }
