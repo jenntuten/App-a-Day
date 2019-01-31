@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 import CodeEditor from '../CodeEditor/CodeEditor';
 import StepByStep from '../StepByStep/StepByStep';
-
+import { Jumbotron } from 'reactstrap';
 import Footer from '../Footer/Footer';
 import Pics from '../Pics/Pics';
 
@@ -38,7 +38,11 @@ class Home extends Component {
         
         
         <StepByStep />
-        <CodeEditor />
+        <div className="editor">
+          <Jumbotron className="this" id="tron">
+       <iframe className="editor-container" src="https://stackblitz.com/edit/js-5orkrc?embed=1&file=index.js" view="Editor" title="code editor"></iframe>
+         </Jumbotron>
+      </div>
         </div>
         </div>
       </div>
